@@ -21,6 +21,7 @@ import { RouterModule, Routes} from '@angular/router';
 
 import { HttpClientModule } from '@angular/common/http';
 import { Service1Service } from './providers/service1.service';
+import { ButtonTestComponent } from './components/button-test/button-test.component';
 
 const routes:Routes = [
   { path: '',component:HomeComponent,pathMatch:'full',canActivate:[AuthGuard]},
@@ -29,6 +30,7 @@ const routes:Routes = [
   { path: 'page2', component: Page2Component, canActivate: [AuthGuard]},
   { path: 'page3/:id', component: Page3Component, canActivate: [AuthGuard]},
   { path: 'login', component: LoginComponent},
+  { path: 'lazyload', loadChildren:'./pages/lazyload/lazyload.module#LazyloadModule'},
   { path: '**', component: NotfoundComponent},
 ];
 
@@ -41,7 +43,8 @@ const routes:Routes = [
     Page3Component,
     Subpage1Component,
     NotfoundComponent,
-    LoginComponent
+    LoginComponent,
+    ButtonTestComponent
   ],
   imports: [
     BrowserModule,

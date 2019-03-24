@@ -1,4 +1,33 @@
-<p>
-  login works!
-</p>
-<button (click)="onSubmit()" mat-raised-button color="primary">login</button>
+<div class="margintop" fxLayout="row" fxLayoutAlign="center none">
+  <h1>Workshop 3</h1>
+</div>
+<div fxLayout="row" fxLayoutAlign="center none">
+  <span>this is third workshop!</span>
+</div>
+<div  fxLayout="row" fxLayoutAlign="center none">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <mat-list>
+      <mat-list-item>
+        <mat-form-field [floatLabel]="'never'">
+          <input formControlName="email" name="Email" placeholder="Email" matInput type="text" >
+            <button mat-button *ngIf="form.controls['email'].value" matSuffix mat-icon-button aria-label="Clear" (click)="form.controls['email'].reset()">
+              <mat-icon>close</mat-icon>
+            </button>
+          <mat-error>Email is in invaild</mat-error>
+        </mat-form-field>
+      </mat-list-item>
+      <mat-list-item>
+        <mat-form-field [floatLabel]="'never'">
+          <input formControlName="password" Name="password" placeholder="Password" matInput type="password" >
+          <button mat-button *ngIf="form.controls['password'].value" matSuffix mat-icon-button aria-label="Clear" (click)="form.controls['password'].reset()">
+            <mat-icon>close</mat-icon>
+          </button>
+          <mat-error>Password is in vaild</mat-error>
+        </mat-form-field>
+      </mat-list-item>
+      <mat-list-item>
+        <button class="loginbutton" type="submit" mat-raised-button color="primary">Sign In</button>
+      </mat-list-item>
+    </mat-list>
+  </form>
+</div>

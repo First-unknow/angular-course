@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-page1',
@@ -8,16 +7,8 @@ import { Router } from '@angular/router'
 })
 export class Page1Component implements OnInit {
 
-  constructor(public router: Router) { }
-  goHome() {
-    this.router.navigate(['']);
-  }
-  goPages2() {
-    this.router.navigate(['page2']);
-  }
-  clicked(event=""){
-    alert("WOW" + event);
-  }
+  constructor() { }
+
   ngOnInit() {
   }
 
