@@ -1,0 +1,13 @@
+<p>
+  home works!
+</p>
+<mat-list>
+  <mat-list-item *ngFor="let user of users">
+    {{ user.first_name }} - {{ user.last_name }}
+  </mat-list-item>
+</mat-list>
+<button (click)="goPages1()" mat-raised-button color="primary" >Gotopages1</button> 
+<button (click)="goPages2()" mat-raised-button color="warn" >Gotopages2</button> 
+<br />
+<br />
+<mat-progress-bar mode="query"></mat-progress-bar>
