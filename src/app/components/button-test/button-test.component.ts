@@ -2,7 +2,8 @@ import { Component,
         OnInit, 
         Input, 
         Output, 
-        EventEmitter  
+        EventEmitter,
+        TemplateRef  
       } from '@angular/core';
 
 @Component({
@@ -12,8 +13,9 @@ import { Component,
 })
 export class ButtonTestComponent implements OnInit {
   @Input() text:any;
+  @Input() hoc:TemplateRef<any>;
   @Output() onClick = new EventEmitter();
-  
+  date = new Date;
   constructor() { }
 
   btnClick(){
